@@ -3,27 +3,49 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ExperienceResource\Pages;
-use App\Filament\Resources\ExperienceResource\RelationManagers;
 use App\Models\Experience;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\DatePicker;
+use Filament\Tables\Columns\TextColumn;
 
 class ExperienceResource extends Resource
 {
     protected static ?string $model = Experience::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clock';
+    protected static ?string $navigationLabel = 'Experience & Clubs';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                TextInput::make('role')
+                    ->required()
+                    ->maxLength(255)
+                    ->placeholder('e.g. Founder & President'),
+
+                TextInput::make('organization')
+                    ->required()
+                    ->maxLength(255)
+                    ->placeholder('e.g. WPS Coding & Robotics Club'),
+
+                DatePicker::make('start_date')
+                    ->required(),
+
+                DatePicker::make('end_date')
+                    ->label('End Date (Leave blank if currently active)'),
+
+                Textarea::make('description')
+                    ->required()
+                    ->columnSpanFull()
+                    ->helperText('Describe your responsibilities and achievements.'),
             ]);
     }
 
@@ -31,7 +53,10 @@ class ExperienceResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('role')->searchable(),
+                TextColumn::make('organization')->searchable(),
+                TextColumn::make('start_date')->date()->sortable(),
+                TextColumn::make('end_date')->date()->sortable()->placeholder('Present'),
             ])
             ->filters([
                 //
@@ -48,9 +73,7 @@ class ExperienceResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
