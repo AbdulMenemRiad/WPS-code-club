@@ -9,6 +9,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Forms\Components\RichEditor;
 
 // Component Imports for the Form
 use Filament\Forms\Components\TextInput;
@@ -50,6 +51,13 @@ class ProjectResource extends Resource
                     ->required()
                     ->columnSpanFull()
                     ->helperText('Explain the problem you solved and the tech stack you used.'),
+
+
+                RichEditor::make('content')
+                    ->label('Full Project Details')
+                    ->columnSpanFull()
+                    ->fileAttachmentsDirectory('project-inline-images') // This lets you drag & drop photos right into the text!
+                    ->helperText('Write your full case study here. You can drag and drop images directly into the text.'),
 
                 // Automatically handles file uploading and saving the path to SQLite
                 FileUpload::make('image_path')

@@ -17,6 +17,7 @@ public function up(): void
         $table->string('slug')->unique();
         $table->string('category'); // e.g., 'Client Website', 'Backend', 'Mechatronics'
         $table->text('description'); // The "Problem vs Solution" write-up
+        $table->longText('content')->nullable();
         $table->string('image_path')->nullable(); // For screenshots
         $table->string('video_path')->nullable(); // For animation/hardware showcase videos
         $table->string('live_url')->nullable(); // Link to active client site

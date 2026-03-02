@@ -36,6 +36,12 @@ Route::get('/blog', function () {
     return view('blog', compact('posts'));
 });
 
+
+Route::get('/projects/{slug}', function ($slug) {
+    $project = App\Models\Project::where('slug', $slug)->firstOrFail();
+    return view('project-detail', compact('project'));
+});
+
 // Contact Page
 Route::get('/contact', function () {
     return view('contact');
