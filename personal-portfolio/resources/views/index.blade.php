@@ -60,7 +60,7 @@
         <div class="row g-5 align-items-center">
           <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
             <div class="border bg-secondary rounded shadow-sm overflow-hidden position-relative">
-              <img src="{{ asset('img/about-2.png') }}" class="img-fluid w-100 rounded" alt="Abdul Meneam Riad" style="min-height: 450px; object-fit: cover;" />
+              <img src="{{ asset('img/1.jpeg') }}" class="img-fluid w-100 rounded" alt="Abdul Meneam Riad" style="min-height: 450px; object-fit: cover;" />
               <div class="position-absolute bottom-0 start-0 bg-primary text-white px-4 py-2 m-3 rounded">
                 <span class="fw-bold">Class of 2026</span>
               </div>
@@ -85,7 +85,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid counter-facts py-5 mb-5" style="background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url('{{ asset('img/breadcrumb.jpg') }}') center center no-repeat; background-attachment: fixed; background-size: cover;">
+    <div class="container-fluid counter-facts py-5 mb-5" style="background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url('{{ asset('img/breadcrumb2.jpg') }}') center center no-repeat; background-attachment: fixed; background-size: cover;">
       <div class="container">
         <div class="row g-4 text-center">
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.1s">

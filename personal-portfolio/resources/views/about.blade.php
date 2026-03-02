@@ -20,7 +20,7 @@
         <div class="row g-5 align-items-center">
           <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
             <div class="border bg-secondary rounded overflow-hidden">
-              <img src="{{ asset('img/about-2.png') }}" class="img-fluid w-100 rounded" alt="Abdul Meneam Riad" style="object-fit: cover; min-height: 400px;" />
+              <img src="{{ asset('img/1.jpeg') }}" class="img-fluid w-100 rounded" alt="Abdul Meneam Riad" style="object-fit: cover; min-height: 400px;" />
             </div>
           </div>
           <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.3s">

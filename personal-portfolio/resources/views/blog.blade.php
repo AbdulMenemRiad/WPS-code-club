@@ -3,7 +3,7 @@
 @section('title', 'Blog - Abdul Meneam Riad')
 
 @section('content')
-    <div class="container-fluid py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url('{{ asset('img/breadcrumb.jpg') }}') center center no-repeat; background-size: cover;">
+    <div class="container-fluid py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url('{{ asset('img/counter-bg.jpg') }}') center center no-repeat; background-size: cover;">
         <div class="container text-center py-5 mt-5">
             <h1 class="display-2 text-white mb-4 animated slideInDown">My Blog</h1>
             <p class="fs-5 text-white mb-0">Thoughts, tutorials, and updates on my latest tech projects.</p>
