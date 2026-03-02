@@ -226,7 +226,8 @@
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-flex justify-content-end">
                     <div class="border-end py-1">
-                        <!--insta here -->
+                        <a href="#" class="text-light me-0"><i
+                            class="fas fa-phone text-primary me-2"></i>968+95528094</a>
                     </div>
                 </div>
             </div>
