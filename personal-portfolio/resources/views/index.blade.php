@@ -90,28 +90,28 @@
         <div class="row g-4 text-center">
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
             <div class="counter-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-              <i class="fas fa-laptop-code fs-2"></i>
+              <i class="fas fa-laptop-code fs-2 floating-icon"></i>
             </div>
             <h1 class="text-white mb-0"><span data-toggle="counter-up">12</span>+</h1>
             <p class="text-white-50 fs-5">Client Websites</p>
           </div>
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
             <div class="counter-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-              <i class="fas fa-microchip fs-2"></i>
+              <i class="fas fa-microchip fs-2 floating-icon"></i>
             </div>
             <h1 class="text-white mb-0"><span data-toggle="counter-up">25</span>+</h1>
             <p class="text-white-50 fs-5">Hardware Builds</p>
           </div>
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.5s">
             <div class="counter-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-              <i class="fas fa-award fs-2"></i>
+              <i class="fas fa-award fs-2 floating-icon"></i>
             </div>
             <h1 class="text-white mb-0"><span data-toggle="counter-up">5</span></h1>
             <p class="text-white-50 fs-5">Certifications</p>
           </div>
           <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.7s">
             <div class="counter-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-              <i class="fas fa-mug-hot fs-2"></i>
+              <i class="fas fa-mug-hot fs-2 floating-icon"></i>
             </div>
             <h1 class="text-white mb-0"><span data-toggle="counter-up">340</span>+</h1>
             <p class="text-white-50 fs-5">Cups of Yerba Mate</p>

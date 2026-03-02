@@ -28,22 +28,181 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 
     <style>
-      /* Ambient Background Styling */
-      #particles-js {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        z-index: -1; /* Keeps it behind all your content */
-        background-color: #f8f9fa; /* Matches your light theme, change to a dark hex if you prefer dark mode */
-      }
+        /* Ambient Background Styling */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* Keeps it behind all your content */
+            background-color: #f8f9fa;
+            /* Matches your light theme, change to a dark hex if you prefer dark mode */
+        }
 
-      /* Make sure your main content containers have a solid background so text remains readable */
-      .bg-white, .bg-light, .bg-secondary {
-        position: relative;
-        z-index: 1;
-      }
+        /* Make sure your main content containers have a solid background so text remains readable */
+        .bg-white,
+        .bg-light,
+        .bg-secondary {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    <style>
+        /* --- NAVBAR EFFECTS --- */
+
+        /* Frosted Glass Navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.75) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        /* Make it a bit more solid when scrolling so text stays readable */
+        .navbar.sticky-top.glass-nav {
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hacker Text Styling */
+        .hacker-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            letter-spacing: 1px;
+            transition: text-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .hacker-text:hover {
+            color: #0d6efd;
+            /* Bootstrap Primary Blue */
+            text-shadow: 0 0 10px rgba(13, 110, 253, 0.6), 0 0 20px rgba(13, 110, 253, 0.4);
+            cursor: crosshair;
+        }
+
+        /* --- MICROINTERACTIONS --- */
+
+        /* 1. Card Lift & Image Zoom */
+        .training-item,
+        .blog-item,
+        .card {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            will-change: transform, box-shadow;
+        }
+
+        .training-item:hover,
+        .blog-item:hover,
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .15) !important;
+        }
+
+        .training-img,
+        .blog-img,
+        .card a {
+            overflow: hidden;
+            /* Keeps the zooming image contained */
+        }
+
+        .training-img img,
+        .blog-img img,
+        .card img {
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            will-change: transform;
+        }
+
+        .training-item:hover img,
+        .blog-item:hover img,
+        .card:hover img {
+            transform: scale(1.08);
+            /* The subtle zoom effect */
+        }
+
+        /* 2. Button Spring Effect */
+        .btn {
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            /* Pushes down slightly when clicked */
+        }
+
+        /* 3. Nav Underline Glide */
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 5px;
+            /* Adjust based on navbar height */
+            left: 50%;
+            background-color: var(--bs-primary);
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 80%;
+            left: 10%;
+        }
+
+        /* 4. Continuous Icon Levitation (Keyframes) */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* 5. Input Focus Glow */
+        .form-control:focus {
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        /* Particles.js Background Fixes (from earlier) */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: #f8f9fa;
+        }
+
+        .bg-white,
+        .bg-light,
+        .bg-secondary {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 
@@ -67,17 +226,18 @@
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-flex justify-content-end">
                     <div class="border-end py-1">
-                            <!--insta here -->
+                        <!--insta here -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 glass-nav">
             <a href="{{ url('/') }}" class="navbar-brand p-0">
-                <h1 class="text-primary m-0">
-                    <i class="fas fa-microchip me-2"></i>Abdul Meneam Riad
+                <h1 class="text-primary m-0 d-flex align-items-center">
+                    <i class="fas fa-terminal me-2"></i>
+                    <span class="hacker-text" data-value="Abdul Meneam Riad">Abdul Meneam Riad</span>
                 </h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -229,64 +389,149 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
-      particlesJS("particles-js", {
-        "particles": {
-          "number": {
-            "value": 60, // Number of dots
-            "density": { "enable": true, "value_area": 800 }
-          },
-          "color": { "value": "#0d6efd" }, // Primary Bootstrap blue color
-          "shape": {
-            "type": "circle",
-            "stroke": { "width": 0, "color": "#000000" },
-          },
-          "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": { "enable": false }
-          },
-          "size": {
-            "value": 3,
-            "random": true,
-            "anim": { "enable": false }
-          },
-          "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#0d6efd", // Blue connecting lines
-            "opacity": 0.4,
-            "width": 1
-          },
-          "move": {
-            "enable": true,
-            "speed": 2, // Slow, ambient movement
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": { "enable": false }
-          }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "grab" // Nodes reach out to the mouse
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 60, // Number of dots
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#0d6efd"
+                }, // Primary Bootstrap blue color
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#0d6efd", // Blue connecting lines
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2, // Slow, ambient movement
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false
+                    }
+                }
             },
-            "onclick": {
-              "enable": true,
-              "mode": "push" // Adds more nodes when clicked
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab" // Nodes reach out to the mouse
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push" // Adds more nodes when clicked
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
             },
-            "resize": true
-          },
-          "modes": {
-            "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
-            "push": { "particles_nb": 4 }
+            "retina_detect": true
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}|:<>?";
+            let interval = null;
+            const hackerText = document.querySelector(".hacker-text");
+
+            if (hackerText) {
+                hackerText.onmouseover = event => {
+                    let iteration = 0;
+                    clearInterval(interval);
+
+                    interval = setInterval(() => {
+                        event.target.innerText = event.target.innerText
+                            .split("")
+                            .map((letter, index) => {
+                                if (index < iteration) {
+                                    return event.target.dataset.value[index];
+                                }
+                                return letters[Math.floor(Math.random() * letters.length)];
+                            })
+                            .join("");
+
+                        // Controls the speed of the decoding. Lower number = faster decoding.
+                        if (iteration >= event.target.dataset.value.length) {
+                            clearInterval(interval);
+                        }
+                        iteration += 1 / 2;
+                    }, 30); // 30ms between letter swaps
+                }
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          if(document.getElementById('particles-js')) {
+              particlesJS("particles-js", {
+                "particles": {
+                  "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                  "color": { "value": "#0d6efd" },
+                  "shape": { "type": "circle" },
+                  "opacity": { "value": 0.5, "random": false },
+                  "size": { "value": 3, "random": true },
+                  "line_linked": { "enable": true, "distance": 150, "color": "#0d6efd", "opacity": 0.4, "width": 1 },
+                  "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+                },
+                "interactivity": {
+                  "detect_on": "canvas",
+                  "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                  },
+                  "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                    "push": { "particles_nb": 4 }
+                  }
+                },
+                "retina_detect": true
+              });
           }
-        },
-        "retina_detect": true
       });
     </script>
 </body>
