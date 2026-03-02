@@ -39,17 +39,15 @@
         <div class="row gx-0 align-items-center" style="height: 45px">
             <div class="col-lg-8 text-center text-lg-start mb-lg-0">
                 <div class="d-flex flex-wrap">
-                    <a href="https://maps.app.goo.gl/e6EXQub7DLrgk4La7" target="_blank" class="text-light me-4"><i
-                            class="fas fa-map-marker-alt text-primary me-2"></i>Al wave private school, Muscat</a>
+
                     <a href="#" class="text-light me-0"><i
-                            class="fas fa-envelope text-primary me-2"></i>wpsmechatronics@gmail.com</a>
+                            class="fas fa-envelope text-primary me-2"></i>abdulmenemriad@gmail.com</a>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-flex justify-content-end">
                     <div class="border-end py-1">
-                        <a href="https://www.instagram.com/wpsmechatronicsclub?utm_source=qr" target="_blank"
-                            class="btn text-primary"><i class="fab fa-instagram"></i></a>
+                            <!--insta here -->
                     </div>
                 </div>
             </div>
@@ -94,29 +92,25 @@
                             <h4 class="text-white mb-4">Abdul meneam Riad</h4>
                             <p class="text-white mb-3">Software and mechatronics Portfolio</p>
                             <div class="d-flex">
-                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2"
-                                    href="https://www.instagram.com/wpsmechatronicsclub?utm_source=qr"
-                                    target="_blank"><i class="fab fa-instagram"></i></a>
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                        <h4 class="text-white mb-4">Address</h4>
+                        <h4 class="text-white mb-4">Contact</h4>
                         <div class="d-flex align-items-center mb-3">
-                            <a class="btn btn-lg-square btn-primary rounded-circle mx-2"
-                                href="https://maps.app.goo.gl/e6EXQub7DLrgk4La7" target="_blank"><i
-                                    class="fas fa-map-marker-alt"></i></a>
+
                             <div class="text-white ms-2">
-                                <p class="mb-0">Al wave private school, Muscat</p>
+                                <p class="mb-0">968+95528094</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
                             <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i
                                     class="fas fa-envelope"></i></a>
                             <div class="text-white ms-2">
-                                <p class="mb-0">wpsmechatronics@gmail.com</p>
+                                <p class="mb-0">abdulmenemriad@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -124,7 +118,7 @@
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
                         <h4 class="text-white mb-4">Quick Links</h4>
-                        <a href="{{ url('/about') }}" class="footer-link"> About Us</a>
+                        <a href="{{ url('/about') }}" class="footer-link"> About Me</a>
                         <a href="{{ url('/blog') }}" class="footer-link"> Blog</a>
                         <a href="{{ url('/contact') }}" class="footer-link"> Contact Us</a>
                     </div>
