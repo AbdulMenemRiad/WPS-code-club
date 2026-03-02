@@ -26,9 +26,29 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+
+    <style>
+      /* Ambient Background Styling */
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Keeps it behind all your content */
+        background-color: #f8f9fa; /* Matches your light theme, change to a dark hex if you prefer dark mode */
+      }
+
+      /* Make sure your main content containers have a solid background so text remains readable */
+      .bg-white, .bg-light, .bg-secondary {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
 </head>
 
 <body>
+    <div id="particles-js"></div>
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
@@ -205,6 +225,70 @@
     </script>
 
     <script src="{{ asset('js/main.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 60, // Number of dots
+            "density": { "enable": true, "value_area": 800 }
+          },
+          "color": { "value": "#0d6efd" }, // Primary Bootstrap blue color
+          "shape": {
+            "type": "circle",
+            "stroke": { "width": 0, "color": "#000000" },
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": { "enable": false }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": { "enable": false }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#0d6efd", // Blue connecting lines
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2, // Slow, ambient movement
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": { "enable": false }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab" // Nodes reach out to the mouse
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push" // Adds more nodes when clicked
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+            "push": { "particles_nb": 4 }
+          }
+        },
+        "retina_detect": true
+      });
+    </script>
 </body>
 
 </html>

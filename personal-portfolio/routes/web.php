@@ -40,3 +40,9 @@ Route::get('/blog', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/blog/{slug}', function ($slug) {
+    $post = App\Models\Post::where('slug', $slug)->firstOrFail();
+
+    return view('post', compact('post'));
+});
