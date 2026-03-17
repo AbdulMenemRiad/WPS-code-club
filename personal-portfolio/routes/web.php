@@ -36,6 +36,12 @@ Route::get('/blog', function () {
     return view('blog', compact('posts'));
 });
 
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ar'])) {
+        session()->put('locale', $locale);
+    }
+    return redirect()->back();
+});
 
 Route::get('/projects/{slug}', function ($slug) {
     $project = App\Models\Project::where('slug', $slug)->firstOrFail();

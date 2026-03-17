@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="utf-8" />
@@ -227,7 +227,7 @@
                 <div class="d-flex justify-content-end">
                     <div class="border-end py-1">
                         <a href="#" class="text-light me-0"><i
-                            class="fas fa-phone text-primary me-2"></i>968+95528094</a>
+                                class="fas fa-phone text-primary me-2"></i>968+95528094</a>
                     </div>
                 </div>
             </div>
@@ -247,17 +247,29 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{{ url('/') }}"
-                        class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
+                        class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">{{ __('Home') }}</a>
                     <a href="{{ url('/about') }}"
-                        class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">Experience</a>
+                        class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">{{ __('Experience') }}</a>
                     <a href="{{ url('/projects') }}"
-                        class="nav-item nav-link {{ request()->is('projects') ? 'active' : '' }}">Portfolio</a>
+                        class="nav-item nav-link {{ request()->is('projects') ? 'active' : '' }}">{{ __('Portfolio') }}</a>
                     <a href="{{ url('/certificates') }}"
-                        class="nav-item nav-link {{ request()->is('certificates') ? 'active' : '' }}">Certifications</a>
+                        class="nav-item nav-link {{ request()->is('certificates') ? 'active' : '' }}">{{ __('Certifications') }}</a>
                     <a href="{{ url('/blog') }}"
-                        class="nav-item nav-link {{ request()->is('blog') ? 'active' : '' }}">Blog</a>
+                        class="nav-item nav-link {{ request()->is('blog') ? 'active' : '' }}">{{ __('Blog') }}</a>
                     <a href="{{ url('/contact') }}"
-                        class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
+                        class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}">{{ __('Contact') }}</a>
+                </div>
+
+                <div class="d-flex align-items-center ms-3">
+                    @if (app()->getLocale() == 'en')
+                        <a href="{{ url('lang/ar') }}"
+                            class="btn btn-outline-primary rounded-pill px-3 py-1 btn-sm fw-bold"
+                            style="font-family: 'Tajawal', sans-serif;">عربي <i class="fas fa-globe ms-1"></i></a>
+                    @else
+                        <a href="{{ url('lang/en') }}"
+                            class="btn btn-outline-primary rounded-pill px-3 py-1 btn-sm fw-bold">EN <i
+                                class="fas fa-globe ms-1"></i></a>
+                    @endif
                 </div>
             </div>
         </nav>
@@ -506,34 +518,77 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          if(document.getElementById('particles-js')) {
-              particlesJS("particles-js", {
-                "particles": {
-                  "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-                  "color": { "value": "#0d6efd" },
-                  "shape": { "type": "circle" },
-                  "opacity": { "value": 0.5, "random": false },
-                  "size": { "value": 3, "random": true },
-                  "line_linked": { "enable": true, "distance": 150, "color": "#0d6efd", "opacity": 0.4, "width": 1 },
-                  "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-                },
-                "interactivity": {
-                  "detect_on": "canvas",
-                  "events": {
-                    "onhover": { "enable": true, "mode": "grab" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                  },
-                  "modes": {
-                    "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
-                    "push": { "particles_nb": 4 }
-                  }
-                },
-                "retina_detect": true
-              });
-          }
-      });
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": {
+                            "value": 60,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#0d6efd"
+                        },
+                        "shape": {
+                            "type": "circle"
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": false
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#0d6efd",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+        });
     </script>
 </body>
 
