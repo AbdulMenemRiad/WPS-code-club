@@ -65,7 +65,7 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="border bg-secondary rounded shadow-sm overflow-hidden position-relative">
-                        <img src="{{ asset('img/1.jpeg') }}" class="img-fluid w-100 rounded" alt="Abdul Meneam Riad"
+                        <img src="{{ asset('img/me3.png') }}" class="img-fluid w-100 rounded" alt="Abdul Meneam Riad"
                             style="min-height: 450px; object-fit: cover;" />
                         <div class="position-absolute bottom-0 start-0 bg-primary text-white px-4 py-2 m-3 rounded">
                             <span class="fw-bold">Class of 2026</span>
