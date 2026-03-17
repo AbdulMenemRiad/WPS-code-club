@@ -50,8 +50,16 @@
         }
     </style>
     <style>
-        /* Force center alignment on Hero Carousels in Arabic */
-        html[dir="rtl"] .carousel-caption .text-lg-start {
+        /* Hero Carousel RTL Fixes */
+        html[dir="rtl"] .carousel-caption {
+            right: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+        }
+
+        html[dir="rtl"] .carousel-caption-content {
+            margin-left: auto !important;
+            margin-right: auto !important;
             text-align: center !important;
         }
 
@@ -289,12 +297,7 @@
                     <p class="text-white-50 mb-3">
                         {{ __('Software developer and mechatronics engineer bridging the gap between logic and hardware.') }}
                     </p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-primary rounded-circle me-2" href="#"
-                            target="_blank"><i class="fab fa-github"></i></a>
-                        <a class="btn btn-square btn-outline-primary rounded-circle me-2" href="#"
-                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-4">{{ __('Quick Links') }}</h4>

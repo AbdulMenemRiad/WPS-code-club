@@ -93,19 +93,7 @@
                                     <p class="mb-0">abdulmenemriad@gmail.com</p>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary rounded-circle"
-                                    style="width: 60px; height: 60px;">
-                                    <i class="fa fa-share-alt text-white fs-4 floating-icon"></i>
-                                </div>
-                                <div class="ms-4 d-flex gap-2">
-                                    <h5 class="text-primary mb-0 mx-2 mt-1">{{ __('Socials') }}</h5>
-                                    <a class="btn btn-sm-square btn-outline-primary rounded-circle" href="#"
-                                        target="_blank"><i class="fab fa-github"></i></a>
-                                    <a class="btn btn-sm-square btn-outline-primary rounded-circle" href="#"
-                                        target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="rounded overflow-hidden shadow-sm flex-grow-1" style="min-height: 250px;">
                             <iframe class="w-100 h-100"
