@@ -50,6 +50,11 @@
         }
     </style>
     <style>
+        /* Force center alignment on Hero Carousels in Arabic */
+        html[dir="rtl"] .carousel-caption .text-lg-start {
+            text-align: center !important;
+        }
+
         /* --- NAVBAR EFFECTS --- */
 
         /* Frosted Glass Navbar */
@@ -279,65 +284,49 @@
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item d-flex flex-column">
-                        <div class="footer-item">
-                            <h4 class="text-white mb-4">Abdul meneam Riad</h4>
-                            <p class="text-white mb-3">Software and mechatronics Portfolio</p>
-                            <div class="d-flex">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">Abdul Meneam Riad</h4>
+                    <p class="text-white-50 mb-3">
+                        {{ __('Software developer and mechatronics engineer bridging the gap between logic and hardware.') }}
+                    </p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-primary rounded-circle me-2" href="#"
+                            target="_blank"><i class="fab fa-github"></i></a>
+                        <a class="btn btn-square btn-outline-primary rounded-circle me-2" href="#"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">{{ __('Quick Links') }}</h4>
+                    <a class="btn btn-link text-white-50" href="{{ url('/about') }}">{{ __('Experience') }}</a>
+                    <a class="btn btn-link text-white-50" href="{{ url('/projects') }}">{{ __('Portfolio') }}</a>
+                    <a class="btn btn-link text-white-50" href="{{ url('/contact') }}">{{ __('Contact') }}</a>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h4 class="text-white mb-4">{{ __('Newsletter') }}</h4>
+                    <p class="text-white-50 mb-3">
+                        {{ __('Get notified when I publish new tech tutorials or finish major hardware builds.') }}</p>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item d-flex flex-column">
-                        <h4 class="text-white mb-4">Contact</h4>
-                        <div class="d-flex align-items-center mb-3">
+                    @if (session('success'))
+                        <div class="alert alert-success py-2">{{ session('success') }}</div>
+                    @endif
 
-                            <div class="text-white ms-2">
-                                <p class="mb-0">968+95528094</p>
-                            </div>
+                    <form action="{{ url('/subscribe') }}" method="POST">
+                        @csrf
+                        <div class="position-relative w-100">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5 text-white" type="email"
+                                name="email" placeholder="{{ __('Your email') }}" required>
+                            <button type="submit"
+                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">{{ __('Subscribe') }}</button>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i
-                                    class="fas fa-envelope"></i></a>
-                            <div class="text-white ms-2">
-                                <p class="mb-0">abdulmenemriad@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item d-flex flex-column">
-                        <h4 class="text-white mb-4">Quick Links</h4>
-                        <a href="{{ url('/about') }}" class="footer-link"> About Me</a>
-                        <a href="{{ url('/blog') }}" class="footer-link"> Blog</a>
-                        <a href="{{ url('/contact') }}" class="footer-link"> Contact Us</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item d-flex flex-column">
-                        <div class="footer-item">
-                            <h4 class="text-white mb-4">Newsletter</h4>
-                            <p class="text-white mb-3">Enter your email and recieve weekly updates from our blog and
-                                newsletter</p>
-                            <form id="newsletter-form" action="{{ url('/subscribe') }}" method="POST">
-                                @csrf
-                                <div class="position-relative mx-auto rounded-pill">
-                                    <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="email"
-                                        name="email" placeholder="Enter your email" required />
-                                    <button type="submit"
-                                        class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
-                                </div>
-                            </form>
-                            <div id="newsletter-message" class="mt-2 text-white"></div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+
+
     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

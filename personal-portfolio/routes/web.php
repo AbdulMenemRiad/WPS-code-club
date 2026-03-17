@@ -5,6 +5,46 @@ use App\Models\Project;
 use App\Models\Experience;
 use App\Models\Certificate;
 use App\Models\Post;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Models\ContactMessage;
+use App\Models\Subscriber;
+
+
+
+// Contact Form Submission
+Route::post('/contact/submit', function (Request $request) {
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email',
+        'subject' => 'required',
+        'message' => 'required',
+    ]);
+
+    ContactMessage::create($request->all());
+
+    // Send Email Notification
+    Mail::raw("New message from {$request->name} ({$request->email}):\n\n{$request->message}", function ($mail) use ($request) {
+        $mail->to('abdulmenemriad@gmail.com')
+            ->subject('PORTFOLIO: ' . $request->subject);
+    });
+
+    return back()->with('success', __('Message sent successfully!'));
+});
+
+// Newsletter Submission
+Route::post('/subscribe', function (Request $request) {
+    $request->validate(['email' => 'required|email|unique:subscribers,email']);
+
+    Subscriber::create(['email' => $request->email]);
+
+    Mail::raw("New newsletter subscriber: {$request->email}", function ($mail) {
+        $mail->to('abdulmenemriad@gmail.com')
+            ->subject('PORTFOLIO: New Subscriber!');
+    });
+
+    return back()->with('success', __('Subscribed successfully!'));
+});
 
 // Home Page (Fetches 3 Featured Projects)
 Route::get('/', function () {

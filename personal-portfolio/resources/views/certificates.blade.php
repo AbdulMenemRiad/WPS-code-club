@@ -3,12 +3,21 @@
 @section('title', 'Certifications - Abdul Meneam Riad')
 
 @section('content')
-    <div class="container-fluid bg-secondary py-5 mb-5">
-        <div class="container text-center py-5">
-            <h1 class="display-2 text-white mb-4">Certifications Vault</h1>
-            <p class="fs-5 text-white">A collection of my academic achievements, courses, and proficiencies.</p>
+<div class="container-fluid py-5 mb-5 wow fadeIn" data-wow-delay="0.1s"
+         style="background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)),
+         url('{{ asset('img/breadcrumb.jpg') }}') center center no-repeat; background-size: cover;">
+        <div class="container text-center py-5 mt-5">
+            <h1 class="display-2 text-white mb-4 animated slideInDown">{{ __('Certification vault') }}</h1>
+            <p class="fs-5 text-white">{{ __('A collection of my academic achivements') }}</p>
+            <nav aria-label="breadcrumb animated slideInDown" class="mt-3">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-white">{{ __('Home') }}</a></li>
+                    <li class="breadcrumb-item text-primary" aria-current="page">{{ __('Portfolio') }}</li>
+                </ol>
+            </nav>
         </div>
     </div>
+
 
     <div class="container py-5">
         <div class="row g-4">
