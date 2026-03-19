@@ -88,6 +88,9 @@
     "Featured Tech Blogs": "المدونات التقنية المميزة",
     "View All Blogs": "عرض جميع التدوينات",
     "Read Article": "قراءة المقال",
-    "No featured blogs yet. Pin them from the Admin Panel!": "لا توجد مدونات مميزة بعد. قم بتثبيتها من لوحة التحكم!"
+    "No featured blogs yet. Pin them from the Admin Panel!": "لا توجد مدونات مميزة بعد. قم بتثبيتها من لوحة التحكم!",
+    "Live Analytics": "الإحصائيات المباشرة",
+    "Real-time, privacy-respecting traffic data self-hosted on my personal VPS.": "بيانات زيارات حية تحترم الخصوصية ومستضافة ذاتياً على خادمي الشخصي.",
+    "Analytics": "الإحصائيات"
 
 }

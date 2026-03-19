@@ -58,6 +58,9 @@ Route::get('/', function () {
     return view('index', compact('featuredProjects', 'featuredPosts'));
 });
 
+Route::get('/analytics', function () {
+    return view('analytics');
+});
 // About & Experience Page
 Route::get('/about', function () {
     $experiences = Experience::orderBy('start_date', 'desc')->get();

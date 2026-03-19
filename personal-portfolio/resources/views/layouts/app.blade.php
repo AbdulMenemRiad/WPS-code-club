@@ -3,6 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="..." name="keywords" />
+    <meta content="..." name="description" />
+
+    <script defer src="https://analytics.abdulmenem.com/script.js" data-website-id="6899fad6-4257-4d59-9ea6-7f139310f60d">
+    </script>
     <title>@yield('title', 'WPS Coding & Robotics Club')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Coding, Robotics, Programming, WPS, Al Wave Private School, STEM, Arduino, Python" name="keywords" />
@@ -28,17 +34,21 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 
     <style>
-
-
         /* --- RICH EDITOR IMAGE RESPONSIVENESS --- */
-      .post-content img,
-      .project-content img {
-          max-width: 100%;      /* Stops the image from overflowing the container */
-          height: auto;         /* Maintains the exact aspect ratio so it never squishes */
-          border-radius: 8px;   /* Optional: Gives the images smooth corners to match your theme */
-          margin: 1.5rem 0;     /* Adds a nice spacing gap above and below the images */
-          box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: Adds a subtle depth shadow */
-      }
+        .post-content img,
+        .project-content img {
+            max-width: 100%;
+            /* Stops the image from overflowing the container */
+            height: auto;
+            /* Maintains the exact aspect ratio so it never squishes */
+            border-radius: 8px;
+            /* Optional: Gives the images smooth corners to match your theme */
+            margin: 1.5rem 0;
+            /* Adds a nice spacing gap above and below the images */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Optional: Adds a subtle depth shadow */
+        }
+
         /* Ambient Background Styling */
         #particles-js {
             position: fixed;
@@ -315,6 +325,7 @@
                     <a class="btn btn-link text-white-50" href="{{ url('/about') }}">{{ __('Experience') }}</a>
                     <a class="btn btn-link text-white-50" href="{{ url('/projects') }}">{{ __('Portfolio') }}</a>
                     <a class="btn btn-link text-white-50" href="{{ url('/contact') }}">{{ __('Contact') }}</a>
+                    <a class="btn btn-link text-white-50" href="{{ url('/analytics') }}"><i class="fas fa-chart-line me-2"></i>{{ __('Live Analytics') }}</a>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <h4 class="text-white mb-4">{{ __('Newsletter') }}</h4>
