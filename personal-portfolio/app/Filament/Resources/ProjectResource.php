@@ -55,9 +55,13 @@ class ProjectResource extends Resource
 
                 RichEditor::make('content')
                     ->label('Full Project Details')
+                    ->fileAttachmentsVisibility('public')
                     ->columnSpanFull()
+                    ->fileAttachmentsDisk('public') // Add this!
                     ->fileAttachmentsDirectory('project-inline-images') // This lets you drag & drop photos right into the text!
                     ->helperText('Write your full case study here. You can drag and drop images directly into the text.'),
+
+
 
                 // Automatically handles file uploading and saving the path to SQLite
                 FileUpload::make('image_path')

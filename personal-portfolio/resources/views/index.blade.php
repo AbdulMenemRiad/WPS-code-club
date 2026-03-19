@@ -233,4 +233,65 @@
 
         </div>
     </div>
+
+    <div class="container-fluid blog py-5 bg-light">
+        <div class="container py-5">
+            <div class="pb-5">
+                <div class="row g-4 align-items-end">
+                    <div class="col-xl-8">
+                        <h4 class="text-secondary sub-title fw-bold wow fadeInUp" data-wow-delay="0.1s">
+                            {{ __('Latest Articles') }}</h4>
+                        <h1 class="display-2 mb-0 wow fadeInUp" data-wow-delay="0.3s">{{ __('Featured Tech Blogs') }}
+                        </h1>
+                    </div>
+                    <div class="col-xl-4 text-xl-end wow fadeInUp" data-wow-delay="0.3s">
+                        <a class="btn btn-primary rounded-pill text-white py-3 px-5"
+                            href="{{ url('/blog') }}">{{ __('View All Blogs') }}</a>
+                    </div>
+                </div>
+            </div>
+
+            @if (isset($featuredPosts) && $featuredPosts->count() > 0)
+                <div class="blog-carousel owl-carousel pt-5 wow fadeInUp" data-wow-delay="0.1s">
+                    @foreach ($featuredPosts as $post)
+                        <div class="blog-item bg-white rounded h-100 d-flex flex-column shadow-sm training-item">
+                            <a href="{{ url('/blog/' . $post->slug) }}"
+                                class="blog-img rounded-top d-block position-relative">
+                                @if ($post->image_path)
+                                    <img src="{{ asset('storage/' . $post->image_path) }}"
+                                        class="img-fluid rounded-top w-100" alt="{{ $post->title }}"
+                                        style="height: 250px; object-fit: cover;" />
+                                @else
+                                    <img src="{{ asset('img/class-4.jpg') }}" class="img-fluid rounded-top w-100"
+                                        alt="Placeholder" style="height: 250px; object-fit: cover;" />
+                                @endif
+                                <span
+                                    class="fs-6 fw-bold bg-secondary text-white d-inline-block rounded px-3 py-1 position-absolute"
+                                    style="top: 10px; right: 10px;">
+                                    <i class="fa fa-calendar-alt me-1"></i>
+                                    {{ $post->published_at ? \Carbon\Carbon::parse($post->published_at)->format('M d') : 'Draft' }}
+                                </span>
+                            </a>
+
+                            <div class="p-4 flex-grow-1 d-flex flex-column">
+                                <a href="{{ url('/blog/' . $post->slug) }}"
+                                    class="h4 mb-3 d-block text-dark text-decoration-none">{{ $post->title }}</a>
+                                <p class="mb-4 flex-grow-1 text-muted">
+                                    {{ Str::limit(strip_tags($post->content), 100) }}
+                                </p>
+
+                                <a class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-start"
+                                    href="{{ url('/blog/' . $post->slug) }}">{{ __('Read Article') }} <i
+                                        class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="col-12 text-center py-5">
+                    <p class="fs-5 text-muted">{{ __('No featured blogs yet. Pin them from the Admin Panel!') }}</p>
+                </div>
+            @endif
+        </div>
+    </div>
 @endsection

@@ -28,6 +28,17 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 
     <style>
+
+
+        /* --- RICH EDITOR IMAGE RESPONSIVENESS --- */
+      .post-content img,
+      .project-content img {
+          max-width: 100%;      /* Stops the image from overflowing the container */
+          height: auto;         /* Maintains the exact aspect ratio so it never squishes */
+          border-radius: 8px;   /* Optional: Gives the images smooth corners to match your theme */
+          margin: 1.5rem 0;     /* Adds a nice spacing gap above and below the images */
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: Adds a subtle depth shadow */
+      }
         /* Ambient Background Styling */
         #particles-js {
             position: fixed;

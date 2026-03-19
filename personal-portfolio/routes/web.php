@@ -48,8 +48,14 @@ Route::post('/subscribe', function (Request $request) {
 
 // Home Page (Fetches 3 Featured Projects)
 Route::get('/', function () {
-    $featuredProjects = Project::where('is_featured', true)->take(3)->get();
-    return view('index', compact('featuredProjects'));
+    // Grabs ALL pinned projects
+    $featuredProjects = Project::where('is_featured', true)->get();
+
+    // Grabs ALL pinned blog posts
+    $featuredPosts = Post::where('is_featured', true)->get();
+
+    // Passes BOTH to the index view
+    return view('index', compact('featuredProjects', 'featuredPosts'));
 });
 
 // About & Experience Page

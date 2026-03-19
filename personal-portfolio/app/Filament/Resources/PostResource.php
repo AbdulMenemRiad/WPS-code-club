@@ -16,6 +16,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\Toggle;
 
 class PostResource extends Resource
 {
@@ -48,7 +49,13 @@ class PostResource extends Resource
                     ->label('Cover Image'),
 
                 DateTimePicker::make('published_at')
-                    ->label('Publish Date (Leave blank to hide post)')
+                    ->label('Publish Date (Leave blank to hide post)'),
+
+
+                Toggle::make('is_featured')
+                    ->label('Pin to Homepage?')
+                    ->helperText('Turn this on to show this article in the homepage carousel.')
+                    ->default(false)
             ]);
     }
 
