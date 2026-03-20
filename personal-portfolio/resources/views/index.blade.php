@@ -89,8 +89,7 @@
                     <div class="d-flex gap-3">
                         <a class="btn btn-primary rounded-pill text-white py-3 px-5"
                             href="{{ url('/about') }}">{{ __('Read Full Story') }}</a>
-                        <a class="btn btn-outline-primary rounded-pill py-3 px-5" href="{{ asset('resume.pdf') }}"
-                            target="_blank"><i class="fas fa-download me-2"></i>{{ __('Download CV') }}</a>
+
                     </div>
                 </div>
             </div>
